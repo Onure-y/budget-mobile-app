@@ -1,0 +1,272 @@
+{
+    "categories" : [
+        {
+            "categoryName" : "Salary",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Salary",
+                    "categoryType" : "Salary",
+                    "boxColor" : "0xff4F75FE",
+                    "imagePath" : "assets/images/salary-logo.png"
+                },
+                {
+                    "subCategoryName" : "Part-Time",
+                    "categoryType" : "Salary",
+                    "boxColor" : "0xff4F75FE",
+                    "imagePath" : "assets/images/salary-logo.png"
+                },
+                {
+                    "subCategoryName" : "Freelance",
+                    "categoryType" : "Salary",
+                    "boxColor" : "0xff4F75FE",
+                    "imagePath" : "assets/images/salary-logo.png"
+                },
+                {
+                    "subCategoryName" : "Deposit",
+                    "categoryType" : "Salary",
+                    "boxColor" : "0xff4F75FE",
+                    "imagePath" : "assets/images/salary-logo.png"
+                }
+            ]
+        },
+        {
+            "categoryName" : "Nutrition",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Breakfast",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/breakfast-logo.png"
+                },
+                {
+                    "subCategoryName" : "Lunch",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/lunch-logo.png"
+                },
+                {
+                    "subCategoryName" : "Dinner",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/dinner-logo.png"
+                },
+                {
+                    "subCategoryName" : "Snack",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/snack-logo.png"
+                },
+                {
+                    "subCategoryName" : "Ice-Cream",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/iceCream-logo.png"
+                },
+                {
+                    "subCategoryName" : "Tea",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/tea-logo.png"
+                },
+                {
+                    "subCategoryName" : "Coffee",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/coffee-logo.png"
+                },
+                {
+                    "subCategoryName" : "Cold Drinks",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/coldDrinks-logo.png"
+                },
+                {
+                    "subCategoryName" : "Cigarettes",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/cigarettes-logo.png"
+                },
+                {
+                    "subCategoryName" : "Alcohol",
+                    "categoryType" : "Nutrition",
+                    "boxColor" : "0xff028254",
+                    "imagePath" : "assets/images/alcohol-logo.png"
+                }
+            ]
+        },
+        {
+            "categoryName" : "Shopping",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Clothing",
+                    "categoryType" : "Shopping",
+                    "boxColor" : "0xffFD635C",
+                    "imagePath" : "assets/images/clothing-logo.png"
+                },
+                {
+                    "subCategoryName" : "Electronics",
+                    "categoryType" : "Shopping",
+                    "boxColor" : "0xffFD635C",
+                    "imagePath" : "assets/images/electronics-logo.png"
+                },
+                {
+                    "subCategoryName" : "Personal Exp",
+                    "categoryType" : "Shopping",
+                    "boxColor" : "0xffFD635C",
+                    "imagePath" : "assets/images/personalExpense-logo.png"
+                }
+            ]
+        },
+        {
+            "categoryName" : "Home",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Bills",
+                    "categoryType" : "Home",
+                    "boxColor" : "0xffF9C74F",
+                    "imagePath" : "assets/images/bills-logo.png"
+                },
+                {
+                    "subCategoryName" : "Furniture",
+                    "categoryType" : "Home",
+                    "boxColor" : "0xffF9C74F",
+                    "imagePath" : "assets/images/furniture-logo.png"
+                },
+                {
+                    "subCategoryName" : "Kitchen Exp",
+                    "categoryType" : "Home",
+                    "boxColor" : "0xffF9C74F",
+                    "imagePath" : "assets/images/kitchenExp-logo.png"
+                },
+                {
+                    "subCategoryName" : "Home Exp.",
+                    "categoryType" : "Home",
+                    "boxColor" : "0xffF9C74F",
+                    "imagePath" : "assets/images/homeExp-logo.png"
+                }
+            ]
+        },
+        {
+            "categoryName" : "Subscriptions",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Netflix",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/netflix-logo.png"
+                },
+                {
+                    "subCategoryName" : "Spotify",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/spotify-logo.png"
+                },
+                {
+                    "subCategoryName" : "Prime Video",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/primeVideo-logo.png"
+                },
+                {
+                    "subCategoryName" : "Youtube",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/youtube-logo.png"
+                },
+                {
+                    "subCategoryName" : "Itunes",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/apple-logo.png"
+                },
+                {
+                    "subCategoryName" : "Twitch",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/twitch-logo.png"
+                },
+                {
+                    "subCategoryName" : "Budget App :)",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/budgetApp-logo.png"
+                },
+                {
+                    "subCategoryName" : "Others",
+                    "categoryType" : "Subscriptions",
+                    "boxColor" : "0xff000000",
+                    "imagePath" : "assets/images/others-logo.png"
+                }
+            ]
+        },
+        {
+            "categoryName" : "Personal Exp",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Vacation",
+                    "categoryType" : "Personal Expense",
+                    "boxColor" : "0xffF3722C",
+                    "imagePath" : "assets/images/vacation-logo.png"
+                },
+                {
+                    "subCategoryName" : "Transportation",
+                    "categoryType" : "Personal Expense",
+                    "boxColor" : "0xffF3722C",
+                    "imagePath" : "assets/images/transportation-logo.png"
+                },
+                {
+                    "subCategoryName" : "Concert",
+                    "categoryType" : "Personal Expense",
+                    "boxColor" : "0xffF3722C",
+                    "imagePath" : "assets/images/concert-logo.png"
+                },
+                {
+                    "subCategoryName" : "Books",
+                    "categoryType" : "Personal Expense",
+                    "boxColor" : "0xffF3722C",
+                    "imagePath" : "assets/images/books-logo.png"
+                },
+                {
+                    "subCategoryName" : "Theater",
+                    "categoryType" : "Personal Expense",
+                    "boxColor" : "0xffF3722C",
+                    "imagePath" : "assets/images/theater-logo.png"
+                },
+                {
+                    "subCategoryName" : "Education",
+                    "categoryType" : "Personal Expense",
+                    "boxColor" : "0xffF3722C",
+                    "imagePath" : "assets/images/education-logo.png"
+                },
+                {
+                    "subCategoryName" : "Movie",
+                    "categoryType" : "Personal Expense",
+                    "boxColor" : "0xffF3722C",
+                    "imagePath" : "assets/images/movie-logo.png"
+                }
+            ]
+        },
+        {
+            "categoryName" : "Taxes",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Tax",
+                    "categoryType" : "Taxes",
+                    "boxColor" : "0xffF9F018",
+                    "imagePath" :  "assets/images/taxes-logo.png"
+                }
+            ]
+        },
+        {
+            "categoryName" : "Others",
+            "subCategoryList" : [
+                {
+                    "subCategoryName" : "Others",
+                    "categoryType" : "Others",
+                    "boxColor" : "0xff6B6B63",
+                    "imagePath" : "assets/images/others-logo.png"
+                }
+            ]
+        }
+    ]
+}

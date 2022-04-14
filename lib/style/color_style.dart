@@ -12,5 +12,8 @@ class ColorPackage {
   static Color dotEnableColor = const Color(0xff616161);
   static Color dotDisableColor = const Color(0xffBDBDBD);
 
+  static Color cancelButtonColor = const Color(0xffFD635C);
+  static Color addButtonColor = const Color(0xff4F75FE);
+
   static Color primaryTextColor = Colors.white;
 }

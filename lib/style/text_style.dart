@@ -19,4 +19,8 @@ class TextStylePackage {
     fontWeight: FontWeight.w300,
     color: ColorPackage.primaryTextColor,
   );
+  static TextStyle extraThinTextStlye = TextStyle(
+    fontWeight: FontWeight.w100,
+    color: ColorPackage.primaryTextColor,
+  );
 }

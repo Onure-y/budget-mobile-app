@@ -1,7 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:budget_app_mobile/style/color_style.dart';
 import 'package:budget_app_mobile/style/text_style.dart';
+import 'package:budget_app_mobile/views/addMovement/addMovementHome_view.dart';
+import 'package:budget_app_mobile/views/allTransaction/allTransaction_view.dart';
+import 'package:budget_app_mobile/views/home/detail_view.dart';
 import 'package:budget_app_mobile/widgets/circle_painter.dart';
+import 'package:budget_app_mobile/widgets/drawer_comp.dart';
 import 'package:budget_app_mobile/widgets/recent_movement.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +14,84 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<IconData> icons = [
+      Icons.add,
+      Icons.pie_chart,
+      Icons.bar_chart,
+      Icons.list_alt,
+      Icons.info_outline
+    ];
+
+    List<String> listTileNames = [
+      'Add Movement',
+      'Overview',
+      'Monthly Overview',
+      'All Transactions',
+      'App Info',
+    ];
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        drawer: Drawer(
+          backgroundColor: ColorPackage.secondryLightColor,
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: ColorPackage.primaryDarkColor,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      radius: 25,
+                    ),
+                    AutoSizeText(
+                      'Onur Emre YILDIRIM',
+                      style: TextStylePackage.normalTextStlye,
+                      minFontSize: 18,
+                    ),
+                    AutoSizeText(
+                      'onuremre555@gmail.com',
+                      style: TextStylePackage.extraThinTextStlye,
+                      minFontSize: 12,
+                    ),
+                  ],
+                ),
+              ),
+              for (var i = 0; i < 5; i++)
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const AllTransactionPage(),
+                      ),
+                    );
+                  },
+                  child: DrawerListTileComp(
+                    listTileName: listTileNames[i],
+                    icon: Icon(
+                      icons[i],
+                      color: Colors.white,
+                      size: 26,
+                    ),
+                  ),
+                )
+            ],
+          ),
+        ),
         appBar: AppBar(
+          leading: Builder(builder: (drawerContext) {
+            return IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(drawerContext).openDrawer();
+              },
+            );
+          }),
           centerTitle: true,
           backgroundColor: ColorPackage.secondryDarkColor,
           elevation: 0,
@@ -57,49 +135,51 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            height: 50,
-                            width: size.width * 0.3,
-                            decoration: BoxDecoration(
-                              color: ColorPackage.primaryDarkColor,
-                              borderRadius: const BorderRadius.only(
-                                bottomLeft: Radius.circular(30.0),
-                                topLeft: Radius.circular(30.0),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: AutoSizeText(
+                              'Balance',
+                              style: TextStylePackage.normalTextStlye,
+                              minFontSize: 18,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: ColorPackage.primaryDarkColor,
+                              minimumSize: const Size(120, 45),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(20.0),
+                                  topLeft: Radius.circular(20.0),
+                                ),
                               ),
                             ),
-                            child: Center(
-                              child: AutoSizeText('Balance',
-                                  style: TextStylePackage.thinTextStlye,
-                                  minFontSize: 16),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: AutoSizeText(
+                              'Income',
+                              style: TextStylePackage.normalTextStlye,
+                              minFontSize: 18,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: ColorPackage.secondryLightColor,
+                              minimumSize: const Size(120, 45),
                             ),
                           ),
-                          Container(
-                            height: 50,
-                            width: size.width * 0.3,
-                            decoration: BoxDecoration(
-                              color: ColorPackage.primaryDarkColor,
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: AutoSizeText(
+                              'Expenses',
+                              style: TextStylePackage.normalTextStlye,
+                              minFontSize: 18,
                             ),
-                            child: Center(
-                              child: AutoSizeText('Income',
-                                  style: TextStylePackage.thinTextStlye,
-                                  minFontSize: 16),
-                            ),
-                          ),
-                          Container(
-                            height: 50,
-                            width: size.width * 0.3,
-                            decoration: BoxDecoration(
-                              color: ColorPackage.primaryDarkColor,
-                              borderRadius: const BorderRadius.only(
-                                bottomRight: Radius.circular(30.0),
-                                topRight: Radius.circular(30.0),
-                              ),
-                            ),
-                            child: Center(
-                              child: AutoSizeText(
-                                'Expenses',
-                                style: TextStylePackage.thinTextStlye,
-                                minFontSize: 16,
+                            style: ElevatedButton.styleFrom(
+                              primary: ColorPackage.secondryLightColor,
+                              minimumSize: const Size(120, 45),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(20.0),
+                                  topRight: Radius.circular(20.0),
+                                ),
                               ),
                             ),
                           ),
@@ -178,18 +258,44 @@ class HomePage extends StatelessWidget {
                         children: [
                           for (var i = 0; i < 3; i++)
                             Column(
-                              children: const [
-                                RecentMovementComp(
-                                  movementName: 'Netflix',
-                                  categoryName: 'Subsscription',
-                                  moneyValue: '12',
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const DetailPage(),
+                                      ),
+                                    );
+                                  },
+                                  child: const RecentMovementComp(
+                                    movementName: 'Netflix',
+                                    categoryName: 'Subsscription',
+                                    moneyValue: '12',
+                                  ),
                                 ),
-                                SizedBox(
-                                  height: 20,
+                                const SizedBox(
+                                  height: 10,
                                 ),
                               ],
                             )
                         ],
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: AutoSizeText(
+                        'Show All Expenses',
+                        style: TextStylePackage.normalTextStlye,
+                        minFontSize: 18,
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: ColorPackage.secondryDarkColor,
+                        minimumSize: const Size(225, 55),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
                       ),
                     ),
                   ],

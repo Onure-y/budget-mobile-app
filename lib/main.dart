@@ -1,3 +1,4 @@
+import 'package:budget_app_mobile/views/home/detail_view.dart';
 import 'package:budget_app_mobile/views/home/home_view.dart';
 import 'package:budget_app_mobile/views/intro/intro_view.dart';
 import 'package:budget_app_mobile/views/intro/welcome_view.dart';

@@ -1,4 +1,4 @@
-import 'package:budget_app_mobile/cubits/addMovement/addMovementCategories_state.dart';
+import 'package:budget_app_mobile/cubits/addMovementCategory/addMovementCategories_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:budget_app_mobile/models/categoryModel/category_model.dart';
 import 'package:budget_app_mobile/models/topCategoryModel/topCategory_model.dart';

@@ -63,13 +63,25 @@ class HomePage extends StatelessWidget {
               for (var i = 0; i < 5; i++)
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            const AllTransactionPage(),
-                      ),
-                    );
+                    if (i == 0) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const AddMovementHomePage(),
+                        ),
+                      );
+                    }
+
+                    if (i == 3) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const AllTransactionPage(),
+                        ),
+                      );
+                    }
                   },
                   child: DrawerListTileComp(
                     listTileName: listTileNames[i],
@@ -273,6 +285,9 @@ class HomePage extends StatelessWidget {
                                     movementName: 'Netflix',
                                     categoryName: 'Subsscription',
                                     moneyValue: '12',
+                                    containerColor: '0xff4F75FE',
+                                    imagePath: 'assets/images/homeExp-logo.png',
+                                    time: 125234623,
                                   ),
                                 ),
                                 const SizedBox(

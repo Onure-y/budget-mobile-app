@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:budget_app_mobile/cubits/addMovement/addMovementCategories_cubit.dart';
-import 'package:budget_app_mobile/cubits/addMovement/addMovementCategories_state.dart';
+import 'package:budget_app_mobile/cubits/addMovementCategory/addMovementCategories_cubit.dart';
+import 'package:budget_app_mobile/cubits/addMovementCategory/addMovementCategories_state.dart';
 import 'package:budget_app_mobile/models/topCategoryModel/topCategory_model.dart';
 import 'package:budget_app_mobile/style/color_style.dart';
 import 'package:budget_app_mobile/style/text_style.dart';

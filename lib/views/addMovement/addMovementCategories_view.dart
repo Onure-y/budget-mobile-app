@@ -81,49 +81,64 @@ class AddMovementCategoriesPage extends StatelessWidget {
                       ),
                       Expanded(
                         child: Container(
-                          child: GridView.builder(
-                              padding: const EdgeInsets.all(30.0),
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3,
-                                crossAxisSpacing: 10,
-                                mainAxisSpacing: 10,
-                              ),
-                              itemCount: state.topCategories[state.pageIndex]
-                                  .categories.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                return InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                            AddMovementFinalPage(
-                                                category: state
+                          child: Builder(builder: (newContext) {
+                            return PageView.builder(
+                              onPageChanged: (int index) => newContext
+                                  .read<AddMovementCategoriesCubit>()
+                                  .changeCategoryPage(index),
+                              itemBuilder: (BuildContext context, int index) =>
+                                  GridView.builder(
+                                      padding: const EdgeInsets.all(30.0),
+                                      gridDelegate:
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: 3,
+                                        crossAxisSpacing: 10,
+                                        mainAxisSpacing: 10,
+                                      ),
+                                      itemCount: state
+                                          .topCategories[state.pageIndex]
+                                          .categories
+                                          .length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return InkWell(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (BuildContext
+                                                        context) =>
+                                                    AddMovementFinalPage(
+                                                        category: state
+                                                            .topCategories[
+                                                                state.pageIndex]
+                                                            .categories[index]),
+                                              ),
+                                            );
+                                          },
+                                          child: CategoryComp(
+                                            categoryName: state
+                                                .topCategories[state.pageIndex]
+                                                .categories[index]
+                                                .categoryName,
+                                            boxColor: Color(
+                                              int.parse(
+                                                state
                                                     .topCategories[
                                                         state.pageIndex]
-                                                    .categories[index]),
-                                      ),
-                                    );
-                                  },
-                                  child: CategoryComp(
-                                    categoryName: state
-                                        .topCategories[state.pageIndex]
-                                        .categories[index]
-                                        .categoryName,
-                                    boxColor: Color(
-                                      int.parse(
-                                        state.topCategories[state.pageIndex]
-                                            .categories[index].containerColor,
-                                      ),
-                                    ),
-                                    imagePath: state
-                                        .topCategories[state.pageIndex]
-                                        .categories[index]
-                                        .imagePath,
-                                  ),
-                                );
-                              }),
+                                                    .categories[index]
+                                                    .containerColor,
+                                              ),
+                                            ),
+                                            imagePath: state
+                                                .topCategories[state.pageIndex]
+                                                .categories[index]
+                                                .imagePath,
+                                          ),
+                                        );
+                                      }),
+                            );
+                          }),
                         ),
                       ),
                     ],
@@ -175,6 +190,7 @@ class CategoryComp extends StatelessWidget {
             categoryName,
             style: TextStylePackage.normalTextStlye,
             minFontSize: 16,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),

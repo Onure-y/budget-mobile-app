@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:budget_app_mobile/cubits/addMovementFinalCubit/addMovementFinal_cubit.dart';
 import 'package:budget_app_mobile/cubits/addMovementFinalCubit/addMovementFinal_state.dart';
+import 'package:budget_app_mobile/cubits/home/home_cubit.dart';
 import 'package:budget_app_mobile/helper/time_package.dart';
 import 'package:budget_app_mobile/models/categoryModel/category_model.dart';
 import 'package:budget_app_mobile/repositories/user_repositories.dart';
@@ -71,6 +72,10 @@ class AddMovementFinalPage extends StatelessWidget {
                       newContext
                           .read<AddMovementFinalCubit>()
                           .createNewMovement(category);
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                      Navigator.pop(context);
                     },
                     child: AutoSizeText(
                       'Add',

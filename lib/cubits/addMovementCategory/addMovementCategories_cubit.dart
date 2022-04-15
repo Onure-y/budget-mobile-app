@@ -55,6 +55,7 @@ class AddMovementCategoriesCubit extends Cubit<AddMovementCategoriesState> {
   }
 
   Future changeCategoryPage(int index) async {
+    emit(AddMovementCategoriesLoadingState());
     pageIndex = index;
     await emitPage();
   }

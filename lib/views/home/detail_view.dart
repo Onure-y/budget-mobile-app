@@ -1,10 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:budget_app_mobile/helper/time_package.dart';
+import 'package:budget_app_mobile/models/movementModel/movement_model.dart';
 import 'package:budget_app_mobile/style/color_style.dart';
 import 'package:budget_app_mobile/style/text_style.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  const DetailPage({Key? key, required this.movement}) : super(key: key);
+
+  final MovementModel movement;
 
   @override
   Widget build(BuildContext context) {
@@ -26,70 +30,56 @@ class DetailPage extends StatelessWidget {
           width: size.width,
           height: size.height,
           color: ColorPackage.primaryDarkColor,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Spacer(),
-                Column(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: const Color(0xff000000),
-                      radius: 80,
-                      child:
-                          Image.asset('assets/images/netflix-logo-detail.png'),
-                    ),
-                    const SizedBox(height: 20),
-                    Column(
-                      children: [
-                        AutoSizeText(
-                          'Netflix',
-                          style: TextStylePackage.normalTextStlye,
-                          minFontSize: 42,
-                        ),
-                        const SizedBox(height: 10),
-                        AutoSizeText(
-                          'Subscription',
-                          style: TextStylePackage.extraThinTextStlye,
-                          minFontSize: 18,
-                        ),
-                        const SizedBox(height: 10),
-                        Container(
-                          width: 100,
-                          child: const Divider(
-                            color: Colors.white,
-                            thickness: 1,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        AutoSizeText(
-                          '11/12/2021 - 14:35',
-                          style: TextStylePackage.extraThinTextStlye,
-                          minFontSize: 18,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 30),
-                    AutoSizeText(
-                      '\$12',
-                      style: TextStylePackage.normalTextStlye,
-                      minFontSize: 32,
-                    ),
-                  ],
-                ),
-                Spacer(),
-                Container(
-                  height: 100,
-                  width: 100,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/go-down-icon.png'),
-                    ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  CircleAvatar(
+                    backgroundColor:
+                        Color(int.parse(movement.category.containerColor)),
+                    radius: 80,
+                    child: Image.asset(movement.category.imagePath),
                   ),
-                ),
-              ],
-            ),
+                  const SizedBox(height: 20),
+                  Column(
+                    children: [
+                      AutoSizeText(
+                        movement.movementName,
+                        style: TextStylePackage.normalTextStlye,
+                        minFontSize: 42,
+                      ),
+                      const SizedBox(height: 10),
+                      AutoSizeText(
+                        movement.category.topCategoryName,
+                        style: TextStylePackage.extraThinTextStlye,
+                        minFontSize: 18,
+                      ),
+                      const SizedBox(height: 10),
+                      Container(
+                        width: 100,
+                        child: const Divider(
+                          color: Colors.white,
+                          thickness: 1,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      AutoSizeText(
+                        TimePackage.getMovementTime(movement.time),
+                        style: TextStylePackage.extraThinTextStlye,
+                        minFontSize: 18,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 30),
+                  AutoSizeText(
+                    '\$ ${movement.moneyValue.toStringAsFixed(2)}',
+                    style: TextStylePackage.normalTextStlye,
+                    minFontSize: 32,
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
